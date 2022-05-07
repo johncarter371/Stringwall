@@ -30,14 +30,14 @@ PHONE_NUMBER_TEXT = (
 )
 
 
-UPDATES_CHANNEL = os.environ.get('UPDATES_CHANNEL', 'AsmSafone')
+UPDATES_CHANNEL = os.environ.get('UPDATES_CHANNEL', 'Wick')
 
 @bot.on_message(filters.private & filters.command("start"))
 async def genStr(_, msg: Message):
     if msg.chat.id in Credentials.BANNED_USERS:
         await bot.send_message(
             chat_id=msg.chat.id,
-            text="You are Banned. Contact My [Support Group](https://t.me/safothebot)",
+            text="You are Banned. Contact My [Support Group](url)",
             reply_to_message_id=msg.message_id
         )
         return
@@ -49,7 +49,7 @@ async def genStr(_, msg: Message):
             if user.status == "kicked":
                await bot.send_message(
                    chat_id=msg.chat.id,
-                   text="Sorry Sir, You are Banned. Contact My [Support Group](https://t.me/safothebot).",
+                   text="Sorry Sir, You are Banned. Contact My [Support Group](url).",
                    parse_mode="markdown",
                    disable_web_page_preview=True
                )
@@ -71,7 +71,7 @@ async def genStr(_, msg: Message):
         except Exception:
             await bot.send_message(
                 chat_id=msg.chat.id,
-                text="**Something Went Wrong. Contact My [Support Group](https://t.me/safothebot).**",
+                text="**Something Went Wrong. Contact My [Support Group](url).**",
                 parse_mode="markdown",
                 disable_web_page_preview=True
             )
@@ -174,7 +174,7 @@ async def genStr(_, msg: Message):
         return
     try:
         session_string = await client.export_session_string()
-        await client.send_message("me", f"#PYROGRAM #STRING_SESSION \n\n```{session_string}``` \n\nBy [String Session Generator](http://t.me/genStr_robot) 🤖\nMade with ❤️ By @AsmSafone! 👑")
+        await client.send_message("me", f"#PYROGRAM #STRING_SESSION \n\n```{session_string}``` \n\nBy [String Session Generator](http://t.me/WickStringSessionRobot) 🤖\nMade with ❤️ By @AsmSafone! 👑")
         await client.disconnect()
         text = "String Session is Successfully ✅ Generated.\nClick On Below Button To Get."
         reply_markup = InlineKeyboardMarkup(
@@ -209,11 +209,11 @@ Must Join Channel for Bot Updates !!
     reply_markup = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton('CHANNEL', url='https://t.me/AsmSafone'),
-                InlineKeyboardButton('SUPPORT', url='https://t.me/Safothebot')
+                InlineKeyboardButton('CHANNEL', url=''),
+                InlineKeyboardButton('SUPPORT', url='')
             ],
             [
-                InlineKeyboardButton('DEVELOPER', url='https://t.me/I_Am_Only_One_1'),
+                InlineKeyboardButton('DEVELOPER', url='Wick'),
             ]
         ]
     )
